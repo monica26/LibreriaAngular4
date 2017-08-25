@@ -1,0 +1,59 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">LIBRERIA</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <div class="head">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="span6" style="padding:50px 0">
+                    <h1 class="text-center">Login</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+ </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3"></div>
+    <div class="panel panel-default text-center col-xs-6" style="padding:50px 0">
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-xs-4" for="login">Usuario</label>
+                    <div class="col-xs-6">
+                        <input type="text" [(ngModel)]="usuario.usuario" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-4" for="password">Password</label>
+                    <div class="col-xs-6">
+                        <input type="password" [(ngModel)]="usuario.pwd" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-6 text-left">
+                        <input type="button" class="btn btn-default" style="width: 80px" value="Entrar" (click)="btnLogin()"/>
+                    </div>
+                </div>                            
+            </div>
+            <div>
+                <font color="red">{{mensaje}}</font>
+            </div>
+           <div>
+                <a routerLink="../registro">Registrarse</a>
+            </div>           
+        </div>	
+    </div>
+
+    <div class="col-xs-3"></div>
+</div>

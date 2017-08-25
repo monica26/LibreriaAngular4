@@ -1,0 +1,62 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">LIBRERIA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="listadolibros">Listado Libros</a></li>
+      <li><a routerLink="../misdatos">Mis datos</a></li>
+      <li><a routerLink="../mispedidos">Mis pedidos</a></li>
+      <li><a routerLink="../carrito">Cesta</a></li>
+      <li><a routerLink="../login">Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!--CABECERA-->
+    <div class="col-lg-12">
+        <h1 class="text-center">Seleccion Libros </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class ="col-lg-3">
+    <!--BOTONES-->
+        <ul class="nav nav-pills nav-stacked"  *ngFor="let categoria of categorias">
+            <li class="active"><button  type="button" class="btn btn-default" style="width:100px" (click)="selectCategoria(categoria)">{{categoria.descripcion}}</button></li>
+        </ul>
+    </div>
+    <div class="col-lg-8 col-lg-offset-1" [hidden] = "!visible">
+      <br/>
+      <h5><strong>{{categoriaSeleccionada}}</strong></h5>
+      <br/>
+        <!--TABLA-->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Precio</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let libro of librosFiltrados">
+                <td>{{libro.descripcion}}</td>
+                <td>{{libro.precio}} €</td>
+                <td><a (click)="addLibroCesta(libro)"> Añadir a la cesta</a></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+ </div>
+</div>
+
+<div class="alert alert-success alert-dismissable" [hidden]="!visibleAddCorrecto" dismiss-on-timeout="5000">
+ <!-- <button type="button" class="close" data-dismiss="alert" (click)="cerrarAlert()">&times;</button>-->
+  Producto añadido a la cesta correctamente
+</div>
+
+
+

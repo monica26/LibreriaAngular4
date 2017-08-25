@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">LIBRERIA</a>
+    </div>
+  </div>
+</nav>
+
+
+<h2 class="text-center">Alta de usuario</h2>
+<br/>
+
+<div class="row">
+    <div class="col-xs-2"></div> 
+    <div class="panel panel-default text-center col-xs-8" style="padding:50px 0">
+        <div class="form-horizontal" >
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="nombre">Nombre</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.nombre"/>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="login">Usuario</label>
+                <div class="col-xs-10">
+                    <input type="text" id="director" class="form-control" [(ngModel)]="usuario.usuario"/>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="password">Password</label>
+                <div class="col-xs-10">
+                    <input type="password" class="form-control" id="password" [(ngModel)]="usuario.pwd"/>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="direccion">Direccion</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="direccion" [(ngModel)]="usuario.direccion"/>
+                </div>
+            </div> 
+            <div class="form-group">
+                <font color="red"> {{mensaje}}</font>
+            </div>
+             <div class="form-group">
+               <div class=" control-label col-xs-4 text-left">
+             <input type="button" class="btn btn-default" value="Insertar" style="width: 80px"  (click)="btnInsertarPulsado()"/>
+             <input type="button" class="btn btn-default" value="Volver" style="width: 80px" (click)="btnVolverPulsado()"/>
+               </div>
+             </div>
+        </div> 
+    </div>
+        
+</div>    
+     
+
+ 

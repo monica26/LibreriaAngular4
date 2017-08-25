@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">LIBRERIA-ADMIN</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="../administrador">Alta Libros</a></li>
+      <li class="active"><a routerLink="gestion">Gestion Libros</a></li>
+      <li> <a routerLink="../listadoclientes">Listado Clientes</a></li>
+      <li><a routerLink="../listadopedidos">Listado Pedidos</a></li>
+      <li><a routerLink="../login">Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!--CABECERA-->
+    <div class="col-lg-12">
+        <h1 class="text-center">Gestion Libros</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-1">
+          <!--TABLA-->
+       <table class="table table-striped" *ngFor="let categoria of listaCategorias">
+            <thead>
+              <tr>
+                <th>{{categoria.descripcion}}</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let libro of listaLibros">
+              <tr *ngIf="libro.tema == categoria.id">
+                <td>{{libro.descripcion}}</td>
+                <td>{{libro.precio}}</td>
+               <!-- <td><a (click)="eliminarLibro(libro.id)">X</a></td>-->
+              </tr>
+            </tbody>
+        </table>
+    </div>
+ </div>
+</div>

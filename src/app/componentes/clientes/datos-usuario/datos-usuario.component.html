@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       <a class="navbar-brand">LIBRERIA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a routerLink="../listadolibros">Listado Libros</a></li>
+      <li class="active"><a routerLink="misdatos">Mis datos</a></li>
+      <li><a routerLink="../mispedidos">Mis pedidos</a></li>
+      <li><a routerLink="../carrito">Cesta</a></li>
+      <li><a routerLink="../login">Salir</a></li>      
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!--CABECERA-->
+    <div class="col-lg-12">
+        <h1 class="text-center">Mis Datos</h1>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="col-xs-2"></div> 
+    <div class="panel panel-default text-center col-xs-8" style="padding:50px 0">
+        <div class="form-horizontal" >
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="nombre">Nombre</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.nombre"/>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="login">Usuario</label>
+                <div class="col-xs-10">
+                    <input type="text" id="director" class="form-control" [(ngModel)]="usuario.usuario"/>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="password">Password</label>
+                <div class="col-xs-10">
+                    <input type="password" class="form-control" id="password" [(ngModel)]="usuario.pwd"/>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="direccion">Direccion</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" id="direccion" [(ngModel)]="usuario.direccion"/>
+                </div>
+            </div> 
+             <div class="form-group">
+               <div class=" control-label col-xs-4 text-left">
+             <input type="button" class="btn btn-default" value="Modificar" style="width: 80px"  (click)="btnModificarPulsado(usuario)"/>
+               </div>
+             </div>
+               <div>
+                <font color="green">{{mensaje}}</font>
+            </div>
+        </div> 
+    </div>
+        
+</div>    

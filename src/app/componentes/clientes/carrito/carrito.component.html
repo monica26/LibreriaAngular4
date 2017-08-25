@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">LIBRERIA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="../listadolibros">Listado Libros</a></li>
+      <li><a routerLink="../misdatos">Mis datos</a></li>
+      <li><a routerLink="../mispedidos">Mis pedidos</a></li>
+      <li class="active"><a routerLink="carrito">Cesta</a></li>
+      <li><a routerLink="../login">Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!--CABECERA-->
+    <div class="col-lg-12">
+        <h1 class="text-center">Cesta Compra</h1>
+    </div>
+  </div>
+
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-1">
+      <div class="alert alert-success" [hidden]="!visiblePedidoCorrecto">
+        Pedido realizado correctamente
+      </div>
+      <font color="red">{{mensajeVacio}}</font>
+      <div class="panel-body">
+        <!--TABLA-->
+          <table class="table table-striped" [hidden] ="!visible">
+            <thead>
+              <tr>
+                <th>Identificador</th>
+                <th>Cantidad Libros</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let linea of lineasPedidos">
+                <td>{{linea.idLibro}}</td>
+                <td>{{linea.cantidad}}</td>
+                <td><a (click)="eliminarLinea(linea)"> X</a></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <button type="button" class="btn btn-default" style="width:150px" (click)="realizarPedido()">Realizar Pedido</button>
+    <button type="button" class="btn btn-default" style="width:150px" (click)="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+</div>
